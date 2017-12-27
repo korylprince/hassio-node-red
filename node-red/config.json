@@ -1,0 +1,47 @@
+{
+    "name": "Node-RED",
+    "version": "1.0",
+    "slug": "node-red",
+    "description": "Node-RED automation server",
+    "url": "https://github.com/korylprince/hassio-node-red/tree/master/node-red",
+    "image": "korylprince/hassio-node-red-{arch}",
+    "webui": "[PROTO:ssl]://[HOST]:[PORT:1880]",
+    "startup": "application",
+    "boot": "auto",
+    "map": ["share:rw", "ssl"],
+    "ports": {
+        "1880/tcp": 1880
+    },
+    "options": {
+        "ssl": false,
+        "certfile": "fullchain.pem",
+        "keyfile": "privkey.pem",
+        "admin_users": [
+            {
+                "username": "admin",
+                "password": "password",
+                "permissions": "*"
+            }
+        ],
+        "http_user": {
+            "username": "",
+            "password": ""
+        }
+    },
+    "schema": {
+        "ssl": "bool",
+        "certfile": "str",
+        "keyfile": "str",
+        "admin_users": [
+            {
+                "username": "str",
+                "password": "str",
+                "permissions": "str"
+            }
+        ],
+        "http_user": {
+            "username": "str",
+            "password": "str"
+        }
+    }
+}
