@@ -95,4 +95,4 @@ else
     sed -i 's/    httpStaticAuth:/    \/\/httpStaticAuth:/g' $SETTINGS_PATH
 fi
 
-NODE_PATH=/usr/lib/node_modules exec node-red --userDir /share/node-red/ /share/node-red/flows.json
+NODE_PATH=/node-red/node_modules exec /node-red/node_modules/.bin/node-red --userDir /share/node-red/ /share/node-red/flows.json
