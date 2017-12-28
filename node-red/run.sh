@@ -87,8 +87,8 @@ fi
 if [[ ! -z "$HTTP_USER" ]] && [[ ! -z "$HTTP_PASSWORD" ]]; then
     echo "HTTP Authentication Enabled"
     # use | instead of / because $HASH might have /
-    sed -i "s|\(//\)\?httpNodeAuth: {.*}|httpNodeAuth: {user: '$HTTP_USER', pass: require("bcryptjs").hashSync("$pass", 8)}|g" $SETTINGS_PATH
-    sed -i "s|\(//\)\?httpStaticAuth: {.*}|httpStaticAuth: {user: '$HTTP_USER', pass: require("bcryptjs").hashSync("$pass", 8)}|g" $SETTINGS_PATH
+    sed -i "s|\(//\)\?httpNodeAuth: {.*}|httpNodeAuth: {user: '$HTTP_USER', pass: require('bcryptjs').hashSync('$pass', 8)}|g" $SETTINGS_PATH
+    sed -i "s|\(//\)\?httpStaticAuth: {.*}|httpStaticAuth: {user: '$HTTP_USER', pass: require('bcryptjs').hashSync('$pass', 8)}|g" $SETTINGS_PATH
 else
     echo "HTTP Authentication Disabled"
     sed -i 's/    httpNodeAuth:/    \/\/httpNodeAuth:/g' $SETTINGS_PATH
