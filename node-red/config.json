@@ -1,6 +1,6 @@
 {
     "name": "Node-RED",
-    "version": "1.1",
+    "version": "1.2",
     "slug": "node-red",
     "description": "Node-RED automation server",
     "url": "https://github.com/korylprince/hassio-node-red/tree/master/node-red",
