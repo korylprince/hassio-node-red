@@ -18,7 +18,7 @@ mkdir -p /share/node-red/
 # copy default settings.js if it doesn't exist
 if [ ! -f $SETTINGS_PATH ]; then
   echo "created default settings"
-  cp /usr/lib/node_modules/node-red/settings.js $SETTINGS_PATH
+  cp /node-red/node_modules/node-red/settings.js $SETTINGS_PATH
 fi
 
 # set SSL settings
