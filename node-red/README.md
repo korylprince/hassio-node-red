@@ -39,6 +39,8 @@ Name | Value
 Base URL | `http://homeassistant:8123` (you might need `https` or a different port if you've changed that)
 API Pass | [Home Assistant API password](https://home-assistant.io/components/http/)
 
+Note: "homeassistant" in the Base URL is not a placeholder. You need to literally use "homeassistant" as the hostname as [that's how add-ons can reach the Home Assistant instance](https://home-assistant.io/developers/hassio/addon_communication/#home-assistant).
+
 # Migration from notoriousbdg's add-on
 
 This add-on uses the same `/share/node-red` folder as the original add-on so only one of the add-ons should be run at once. This add-on should be able to to seamlessly migrate; Just stop the old add-on and start this one. If you do have issues, feel free to [file an issue](https://github.com/korylprince/hassio-node-red/issues). You will need to copy the Hass.io configuration, and it's syntax is a bit different.
