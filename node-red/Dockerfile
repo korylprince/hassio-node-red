@@ -5,6 +5,8 @@ ENV LANG C.UTF-8
 
 RUN apk add --no-cache jq nodejs
 
+RUN apk add --no-cache py-rpigpio; exit 0
+
 RUN mkdir /node-red && \
     cd /node-red && \
     npm install --no-optional --only=production node-red node-red-contrib-home-assistant bcryptjs && \

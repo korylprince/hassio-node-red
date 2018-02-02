@@ -9,6 +9,7 @@
     "startup": "application",
     "boot": "auto",
     "map": ["share:rw", "ssl"],
+    "gpio": true,
     "ports": {
         "1880/tcp": 1880
     },
