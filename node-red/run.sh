@@ -95,4 +95,11 @@ else
     sed -i 's/    httpStaticAuth:/    \/\/httpStaticAuth:/g' $SETTINGS_PATH
 fi
 
+# install module from cache if it doesn't exist
+if [ ! -d /share/node-red/node_modules/node-red-contrib-home-assistant ]; then
+    pushd /share/node-red
+    npm install --offline --save node-red-contrib-home-assistant
+    popd
+fi
+
 NODE_PATH=/node-red/node_modules exec /node-red/node_modules/.bin/node-red --userDir /share/node-red/ /share/node-red/flows.json

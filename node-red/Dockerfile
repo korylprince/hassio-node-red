@@ -9,8 +9,13 @@ RUN apk add --no-cache py-rpigpio; exit 0
 
 RUN mkdir /node-red && \
     cd /node-red && \
-    npm install --no-optional --only=production node-red node-red-contrib-home-assistant bcryptjs && \
-    npm cache clear --force
+    npm install --no-optional --only=production node-red bcryptjs && \
+    npm cache clear --force && \
+    mkdir /node-temp && \
+    cd /node-temp && \
+    npm install --no-optional --only=production node-red-contrib-home-assistant && \
+    cd / && \
+    rm -Rf /node-temp
 
 WORKDIR /data
 
