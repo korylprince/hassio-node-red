@@ -7,7 +7,7 @@ RUN apk add --no-cache jq nodejs
 
 RUN mkdir /node-red && \
     cd /node-red && \
-    npm install --no-optional --only=production node-red@0.18.0 bcryptjs && \
+    npm install --no-optional --only=production node-red@0.18.2 bcryptjs && \
     npm cache clear --force && \
     mkdir /node-temp && \
     cd /node-temp && \
