@@ -36,10 +36,14 @@ To use Home Assistant Nodes, you'll need to add the Home Assistant server when e
 
 Name | Value
 -----|-------
-Base URL | `http://homeassistant:8123` (you might need `https` or a different port if you've changed that)
+Base URL | `http://homeassistant:8123` (See Hostname section below)
 API Pass | [Home Assistant API password](https://home-assistant.io/components/http/)
 
-Note: "homeassistant" in the Base URL is not a placeholder. You need to literally use "homeassistant" as the hostname as [that's how add-ons can reach the Home Assistant instance](https://home-assistant.io/developers/hassio/addon_communication/#home-assistant).
+## Hostname
+
+If you are running Home Assistant without HTTPS, you need to literally use "homeassistant" as the hostname as [that's how add-ons can reach the Home Assistant instance](https://home-assistant.io/developers/hassio/addon_communication/#home-assistant).
+
+If you want to use HTTPS, the configuration gets a bit harder because you have to use the hostname in your certificate. This is usually the certificate Subject Common Name (CN) but can also be in [Subject Alternative Name](https://www.digicert.com/subject-alternative-name.htm) if you have multiple domains in one certificate. You'll need to use `https://<your full certificate hostname>:<your ssl port>` as the Base URL, and you'll need to modify your local DNS to resolve your certificate hostname to your local Hass.io IP Address. For an example of this, see this [DIY Futurism](http://diyfuturism.com/index.php/2018/01/31/setting-up-lets-encrypt-with-node-red-home-assistant/) post.
 
 # Migration from notoriousbdg's add-on
 
