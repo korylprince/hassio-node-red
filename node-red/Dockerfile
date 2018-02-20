@@ -7,11 +7,11 @@ RUN apk add --no-cache jq nodejs git
 
 RUN mkdir /node-red && \
     cd /node-red && \
-    npm install --no-optional --only=production node-red@0.18.2 bcryptjs && \
+    npm install --no-optional --only=production node-red@0.18.3 bcryptjs && \
     npm cache clear --force && \
     mkdir /node-temp && \
     cd /node-temp && \
-    npm install --no-optional --only=production node-red-contrib-home-assistant@0.2.1 && \
+    npm install --no-optional --only=production node-red-contrib-home-assistant@0.3.0 && \
     cd / && \
     rm -Rf /node-temp
 
