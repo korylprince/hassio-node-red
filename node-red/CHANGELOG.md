@@ -1,6 +1,17 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.6] - 2018-02-19
+### Added
+- Added git to image
+
+### Changed
+- Updated Node-RED to 0.18.3
+- Updated node-red-contrib-home-assistant to 0.3.0
+
+### Fixed
+- Fixed problem with updating node-red-contrib-home-assistant because git was missing
+
 ## [1.5] - 2018-02-06
 ### Changed
 - Removed RPi GPIO libraries
@@ -42,6 +53,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Initial Project
 
+[1.6]: https://github.com/korylprince/hassio-node-red/compare/1.5...1.6
 [1.5]: https://github.com/korylprince/hassio-node-red/compare/1.4...1.5
 [1.4]: https://github.com/korylprince/hassio-node-red/compare/1.3...1.4
 [1.3]: https://github.com/korylprince/hassio-node-red/compare/1.2...1.3
