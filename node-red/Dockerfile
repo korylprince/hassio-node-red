@@ -3,7 +3,7 @@ FROM $BUILD_FROM
 
 ENV LANG C.UTF-8
 
-RUN apk add --no-cache jq nodejs
+RUN apk add --no-cache jq nodejs git
 
 RUN mkdir /node-red && \
     cd /node-red && \
