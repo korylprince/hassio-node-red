@@ -80,7 +80,7 @@ EOF
 else
     echo "Admin Authentication Disabled"
     # comment adminAuth section
-    sed -i '/adminAuth: {/,/^    \(\/\/\)\?},/ s/^    /    \/\//g' $SETTINGS_PATH
+    sed -i '/    adminAuth: {/,/^    \(\/\/\)\?},/ s/^    /    \/\//g' $SETTINGS_PATH
 fi
 
 # set HTTP credentials
