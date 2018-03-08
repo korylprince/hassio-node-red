@@ -9,6 +9,7 @@
     "startup": "application",
     "boot": "auto",
     "map": ["share:rw", "ssl"],
+    "host_network": true,
     "ports": {
         "1880/tcp": 1880
     },
