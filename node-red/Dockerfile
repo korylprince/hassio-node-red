@@ -7,7 +7,7 @@ RUN apk add --no-cache jq nodejs git openssh-keygen
 
 RUN mkdir /node-red && \
     cd /node-red && \
-    npm install --no-optional --only=production node-red@0.18.3 bcryptjs && \
+    npm install --no-optional --only=production node-red@0.18.4 bcryptjs && \
     npm cache clear --force && \
     mkdir /node-temp && \
     cd /node-temp && \
