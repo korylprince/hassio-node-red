@@ -1,6 +1,18 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.7] - 2018-03-08
+### Added
+- Added openssh-keygen and curl to image
+- Add-on now waits for Home Assistant API to be available before starting Node-RED
+
+### Changed
+- Updated Node-RED to 0.18.4
+- Now using Host networking to support more palettes
+
+### Fixed
+- Fixed problem where disabling admin users would corrupt settings.js
+
 ## [1.6] - 2018-02-19
 ### Added
 - Added git to image
@@ -53,6 +65,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Initial Project
 
+[1.7]: https://github.com/korylprince/hassio-node-red/compare/1.6...1.7
 [1.6]: https://github.com/korylprince/hassio-node-red/compare/1.5...1.6
 [1.5]: https://github.com/korylprince/hassio-node-red/compare/1.4...1.5
 [1.4]: https://github.com/korylprince/hassio-node-red/compare/1.3...1.4
