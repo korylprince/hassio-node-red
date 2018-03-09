@@ -102,4 +102,14 @@ if [ ! -d /share/node-red/node_modules/node-red-contrib-home-assistant ]; then
     popd
 fi
 
+# wait for Hassio API to be available
+/waiting -s -t 0 hassio:80
+
+# get Home Assistant port
+info=$(curl -s -H "X-HASSIO-KEY: $HASSIO_TOKEN" -H "Content-Type: application/json" http://hassio/homeassistant/info)
+port=$(echo $info | jq --raw-output ".data.port")
+
+# wait for Home Assistant to be available
+/waiting -s -t 0 homeassistant:$port
+
 NODE_PATH=/node-red/node_modules exec /node-red/node_modules/.bin/node-red --userDir /share/node-red/ /share/node-red/flows.json
