@@ -13,6 +13,9 @@ ADMIN_USER_COUNT=$(jq --raw-output ".admin_users | length" $CONFIG_PATH)
 HTTP_USER=$(jq --raw-output ".http_user.username" $CONFIG_PATH)
 HTTP_PASSWORD=$(jq --raw-output ".http_user.password" $CONFIG_PATH)
 
+PALETTE_VERSION=$(jq --raw-output ".palette_version" $CONFIG_PATH)
+palette_versions=( $PALETTE_VERSIONS )
+
 mkdir -p /share/node-red/
 
 # copy default settings.js if it doesn't exist
@@ -95,12 +98,43 @@ else
     sed -i 's/    httpStaticAuth:/    \/\/httpStaticAuth:/g' $SETTINGS_PATH
 fi
 
-# install module from cache if it doesn't exist
-if [ ! -d /share/node-red/node_modules/node-red-contrib-home-assistant ]; then
-    pushd /share/node-red > /dev/null
-    npm install --offline --save node-red-contrib-home-assistant
-    popd > /dev/null
+# if palette version is empty, set to latest version
+if [ -z "$PALETTE_VERSION" ]; then
+    PALETTE_VERSION=${palette_versions[${#palette_versions[@]}-1]}
 fi
+
+# enter node-red directory
+pushd /share/node-red > /dev/null
+
+# get current version of palette
+current_version=$(npm --json list node-red-contrib-home-assistant | jq --raw-output '.dependencies["node-red-contrib-home-assistant"].version')
+
+# if version doesn't match currently installed version, install it
+if [ "$current_version" != "$PALETTE_VERSION" ]; then
+
+    echo "Current palette version: $current_version want: $PALETTE_VERSION"
+
+    # create an array to check for cached versions
+    declare -A version_map
+    for version in ${palette_versions[@]}; do
+        version_map["$version"]=1
+    done
+
+    # install version from cache or Internet
+    if [ ${version_map["$PALETTE_VERSION"]} ]; then
+        echo "Installing $PALETTE_VERSION from cache"
+        npm install --no-optional --only=production --save --offline "node-red-contrib-home-assistant@$PALETTE_VERSION"
+    else
+        echo "Palette Version \"$PALETTE_VERSION\" not in valid list of versions: \""${palette_versions[@]}"\""
+        echo "Installing $PALETTE_VERSION from Internet"
+        npm install --no-optional --only=production --save "node-red-contrib-home-assistant@$PALETTE_VERSION"
+    fi
+else
+    echo "Current palette version $current_version matches requested version"
+fi
+
+# exit node-red directory
+popd > /dev/null
 
 # wait for Hassio API to be available
 /waiting -s -t 0 hassio:80

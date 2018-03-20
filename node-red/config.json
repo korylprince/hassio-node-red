@@ -28,7 +28,8 @@
         "http_user": {
             "username": "",
             "password": ""
-        }
+        },
+        "palette_version": ""
     },
     "schema": {
         "ssl": "bool",
@@ -44,6 +45,7 @@
         "http_user": {
             "username": "str",
             "password": "str"
-        }
+        },
+        "palette_version": "str"
     }
 }
