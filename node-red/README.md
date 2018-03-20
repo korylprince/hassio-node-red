@@ -1,3 +1,5 @@
+See the fully formatted README on [GitHub](https://github.com/korylprince/hassio-node-red/tree/master/node-red).
+
 # About
 
 This unofficial add-on gives an easy way to add [Node-RED](https://nodered.org/) to your [Hass.io](https://home-assistant.io/hassio/) device. It comes pre-installed with [Home Assistant nodes](https://github.com/AYapejian/node-red-contrib-home-assistant) so you can get started easily.
