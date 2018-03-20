@@ -6,7 +6,7 @@ This unofficial add-on gives an easy way to add [Node-RED](https://nodered.org/)
 
 There's already a [Hass.io Node-RED add-on](https://github.com/notoriousbdg/hassio-addons/tree/master/node-red), so why make another one? I took a lot of inspiration from the existing add-on, but I decided to make my own for the following reasons:
 
-* Image size: 94MB vs 590MB
+* Image size: 125MB vs 590MB
 * This add-on is based directly on the `homeassistant/{arch}-base:latest` image instead of ubuntu
 * This add-on has pre-built images on Docker Hub so a local build won't be necessary
 * This add-on comes with the Home Assistant nodes installed by default
