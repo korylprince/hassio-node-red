@@ -28,6 +28,7 @@ certfile | fullchain.pem | see above
 privkey | keyfile.pem | see above
 admin_users | `[{"username": "admin", "password": "password", "permissions": "*"}]` | [adminAuth users](https://nodered.org/docs/security#usernamepassword-based-authentication) settings. This is the login(s) to the admin dashboard. You'll probably want to change the default. If you set this to `"admin_users": []`, authentication won't be required.
 http_user | `{"username": "", "password": ""}` | [HTTP Node user](https://nodered.org/docs/security#http-node-security) settings. This is the login for HTTP nodes and static content. If either `username` or `password` is empty, authentication won't be required.
+palette_version | `""` | Set the [node-red-contrib-home-assistant](https://github.com/AYapejian/node-red-contrib-home-assistant) version. If empty, the latest version will be installed. This add-on caches `0.2.1` and `0.3.0` for offline installation.
 
 
 # Node-RED Configuration
