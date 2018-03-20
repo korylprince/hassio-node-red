@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.8] - 2018-03-19
+### Added
+- Added `palette_version` option to set [node-red-contrib-home-assistant](https://github.com/AYapejian/node-red-contrib-home-assistant) version
+
+### Fixed
+- Removed extraneous log output
+
 ## [1.7] - 2018-03-08
 ### Added
 - Added openssh-keygen and curl to image
@@ -61,10 +68,11 @@ All notable changes to this project will be documented in this file.
 - Use bcryptjs instead of bcrypt because of build issues
 - Fixed bug in string quoting
 
-## [1.0] - 2017-12-26
+## 1.0 - 2017-12-26
 ### Added
 - Initial Project
 
+[1.8]: https://github.com/korylprince/hassio-node-red/compare/1.7...1.8
 [1.7]: https://github.com/korylprince/hassio-node-red/compare/1.6...1.7
 [1.6]: https://github.com/korylprince/hassio-node-red/compare/1.5...1.6
 [1.5]: https://github.com/korylprince/hassio-node-red/compare/1.4...1.5
