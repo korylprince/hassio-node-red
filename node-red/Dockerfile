@@ -16,10 +16,11 @@ RUN mkdir /node-red && \
     cd /node-temp && \
     npm install --no-optional --only=production node-red-contrib-home-assistant@0.2.1 && \
     npm install --no-optional --only=production node-red-contrib-home-assistant@0.3.0 && \
+    npm install --no-optional --only=production node-red-contrib-home-assistant@0.3.2 && \
     cd / && \
     rm -Rf /node-temp
 
-ENV PALETTE_VERSIONS="0.2.1 0.3.0"
+ENV PALETTE_VERSIONS="0.2.1 0.3.0 0.3.2"
 
 WORKDIR /data
 
