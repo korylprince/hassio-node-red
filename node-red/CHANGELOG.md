@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.9] - 2018-05-05
+### Changed
+- Updated node-red-contrib-home-assistant to 0.3.2
+
+### Fixed
+- node-red-contrib-home-assistant 0.3.2 update fixes [#11 (Crashing Issue)](https://github.com/korylprince/hassio-node-red/issues/11)
+
 ## [1.8] - 2018-03-19
 ### Added
 - Added `palette_version` option to set [node-red-contrib-home-assistant](https://github.com/AYapejian/node-red-contrib-home-assistant) version
@@ -72,6 +79,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Initial Project
 
+[1.9]: https://github.com/korylprince/hassio-node-red/compare/1.8...1.9
 [1.8]: https://github.com/korylprince/hassio-node-red/compare/1.7...1.8
 [1.7]: https://github.com/korylprince/hassio-node-red/compare/1.6...1.7
 [1.6]: https://github.com/korylprince/hassio-node-red/compare/1.5...1.6
