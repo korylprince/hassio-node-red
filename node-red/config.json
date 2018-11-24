@@ -1,8 +1,8 @@
 {
-    "name": "Node-RED",
+    "name": "Node-RED (Deprecated)",
     "version": "1.9",
     "slug": "node-red",
-    "description": "Node-RED automation server",
+    "description": "Node-RED automation server (Deprecated)",
     "url": "https://github.com/korylprince/hassio-node-red/tree/master/node-red",
     "image": "korylprince/hassio-node-red-{arch}",
     "webui": "[PROTO:ssl]://[HOST]:[PORT:1880]",

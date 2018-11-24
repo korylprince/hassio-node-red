@@ -1,3 +1,7 @@
+# Deprecation Notice
+
+This add-on is deprecated and no further updates will happen. See the [add-on README](https://github.com/korylprince/hassio-node-red/tree/master/node-red) for information on migrating to an alternative add-on.
+
 # About
 
 This repository contains just one add-on, an unofficial [Node-RED add-on](https://github.com/korylprince/hassio-node-red/tree/master/node-red).

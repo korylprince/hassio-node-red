@@ -1,5 +1,18 @@
 See the fully formatted README on [GitHub](https://github.com/korylprince/hassio-node-red/tree/master/node-red).
 
+# Deprecation Notice
+Due to my inability to keep up with Home Assistant and Node-RED changes, I'm offically deprecating this add-on. The good news is there's a [much better add-on](https://github.com/hassio-addons/addon-node-red) in the Community Hass.io Add-on repository.
+
+This repository will remain on GitHub for the foreseeable future.
+
+#### Migration
+
+Export your flows from the Web GUI or copy your `flows.json` with the SSH or SAMBA add-ons. Stop the old add-on, install, configure, and start the new one, and import your flows using copy and paste in the web GUI.
+
+You'll need to edit your Home Assistant server nodes and check the "I use Hass.io" checkbox.
+
+The new add-on stores its configuration in the Home Assistant config directory, so once you've got everything migrated, you can remove the `/share/node-red` directory.
+
 # About
 
 This unofficial add-on gives an easy way to add [Node-RED](https://nodered.org/) to your [Hass.io](https://home-assistant.io/hassio/) device. It comes pre-installed with [Home Assistant nodes](https://github.com/AYapejian/node-red-contrib-home-assistant) so you can get started easily.
